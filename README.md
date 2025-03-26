@@ -44,6 +44,26 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 *Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.*
 
+```
+# 1.2
+CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'tempass';
+
+# 1.3
+SELECT user,authentication_string,host FROM mysql.user;
+
+# 1.4
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost'WITH GRANT OPTION;
+
+# 1.5
+SHOW GRANTS FOR 'sys_temp'@'localhost';
+
+# 1.8
+CREATE DATABASE `sakila`;
+exit
+mysql -u sys_temp -p sakila < sakila-schema.sql
+mysql -u sys_temp -p sakila < sakila-data.sql
+```
+
 
 ### Задание 2
 Составьте таблицу, используя любой текстовый редактор или Excel, в которой должно быть два столбца: в первом должны быть названия таблиц восстановленной базы, во втором названия первичных ключей этих таблиц. Пример: (скриншот/текст)
