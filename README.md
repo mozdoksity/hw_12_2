@@ -45,11 +45,11 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 *Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.*
 
 # 1.1
-<img src = "img/hw12_1_1.jpg" width = 100%>
+<img src = "img/hw12_1_1.png" width = 100%>
 
 # 1.2
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'tempass';
-<img src = "img/hw12_1_2.jpg" width = 100%>
+<img src = "img/hw12_1_2.png" width = 100%>
 
 # 1.3
 SELECT user,authentication_string,host FROM mysql.user;
@@ -66,7 +66,7 @@ exit
 mysql -u sys_temp -p sakila < sakila-schema.sql
 mysql -u sys_temp -p sakila < sakila-data.sql
 
-<img src = "img/hw12_1_3.jpg" width = 100%>
+<img src = "img/hw12_1_3.png" width = 100%>
 
 
 ### Задание 2
